@@ -1,0 +1,6 @@
+{
+  "description": "WXMoment Analytics",
+  "scripts": [
+    "index.js"
+  ]
+}
