@@ -7,3 +7,4 @@ public/
 .deploy*/
 build/
 components/
+.idea/
