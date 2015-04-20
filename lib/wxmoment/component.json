@@ -1,0 +1,12 @@
+{
+  "scripts": ["index.js"],
+  "locals": [
+    "underscore",
+    "zepto",
+    "analytics",
+    "loader",
+    "orientation-tip",
+    "page-slider",
+    "share"
+  ]
+}

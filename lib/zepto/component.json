@@ -1,0 +1,8 @@
+{
+  "version": "1.6.1",
+  "main": "zepto.js",
+  "scripts": [
+    "zepto.js",
+    "touch.js"
+  ]
+}
