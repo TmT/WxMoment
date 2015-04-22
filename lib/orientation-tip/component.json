@@ -3,6 +3,9 @@
   "scripts": [
     "index.js"
   ],
+  "templates": [
+    "template.html"
+  ],
   "locals": [
     "zepto"
   ]
