@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>统计</title>
+    <script src="/build.js"></script>
+</head>
+<body>
+<script>
+    $(document).ready(function(){
+
+        //=========统计===========
+        var wa = new WxMoment.Analytics({
+            projectName: "20150504WXMOMENT"
+        });
+
+        //必须传三个参数,分别为: 事件分类,事件名称
+        wa.sendEvent('PageView', 'view');
+
+    })
+</script>
+
+</body>
+</html>
