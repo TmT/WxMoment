@@ -5,70 +5,23 @@
     <title>wxMoment</title>
 </head>
 <body>
-<script src="build.js"></script>
-<script>
-
-    var basePath = "http://wximg.gtimg.com/tmt/_demo/wxmoment/";
-
-    //=========统计===========
-    var wa = new WxMoment.Analytics({
-        projectName: "20150504WXMOMENT"
-    });
-    //必须传三个参数,分别为: 事件分类,事件名称
-    wa.sendEvent('pageSlide', '');
-
-    //=========资源加载=========
-    var loader = new WxMoment.Loader();
-    //添加一个资源
-    loader.addImage('https://res.wx.qq.com/mpres/htmledition/images/bg/bg_logo2491a6.png');
-
-    //监听资源加载完成事件
-    loader.addCompletionListener(function () {
-        console.log('加载完成');
-
-        //
-    });
-
-    //启动资源加载管理器
-    loader.start();
-
-
-    //=========旋屏提示=========
-    var ot = new WxMoment.OrientationTip();
-
-    //=========微信分享=========
-
-    function successFunc() {
-        alert("shared");
-    }
-    function cancelFunc() {
-        alert("canceled");
-    }
-    function anotherFunc() {
-        alert("another");
-    }
-
-    var share = new WxMoment.Share({
-        'moment': {
-            'title': "朋友圈分享链接内容"
-        },
-        'friend': {
-            'title': "昨天下了一场雨",
-            'desc': "雨水沾湿了小茉莉"
-        },
-        'global': {
-            'img_url': basePath + "img/thumb.jpg",
-            'link': window.location.href.split("?")[0].replace(/([&|\?]{1})ticket=[\w\-]+(&?)/, '$1').replace(/\?$/, '')
-        },
-        'callback': {
-            'success': successFunc,
-            'cancel': cancelFunc
-        }
-    });
-    share.set(['moment', 'title', "没有买卖就没有伤害"]);
-    share.set(['callback', 'success', anotherFunc]);
-    share.set(['moment', 'link', {'random': "1", 'type': "2"}]);
-
-</script>
+<h2>演示</h2>
+<ul>
+    <li>
+        <a href="/example/Share.html">微信分享</a>
+    </li>
+    <li>
+        <a href="/example/Analytics.html">事件统计</a>
+    </li>
+    <li>
+        <a href="/example/OrientationTip.html">横屏提示</a>
+    </li>
+    <li>
+        <a href="/example/Loader.html">资源预加载</a>
+    </li>
+    <li>
+        <a href="/example/Loader.html">滑屏组件</a>
+    </li>
+</ul>
 </body>
 </html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>资源加载</title>
+    <script src="/build.js"></script>
+</head>
+<body>
+
+<script>
+    $(document).ready(function(){
+
+        //=========资源加载=========
+        var loader = new WxMoment.Loader();
+        //添加一个资源
+        loader.addImage('https://res.wx.qq.com/mpres/htmledition/images/bg/bg_logo2491a6.png');
+
+        //监听资源加载完成事件
+        loader.addCompletionListener(function () {
+            console.log('加载完成');
+        });
+
+        //启动资源加载管理器
+        loader.start();
+
+    })
+</script>
+
+</body>
+</html>
