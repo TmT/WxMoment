@@ -14,3 +14,9 @@ npm install
 ```
 node server.js
 ```
+
+编译JS
+
+```
+component build --name wxmoment
+```
