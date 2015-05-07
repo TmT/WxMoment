@@ -6,5 +6,6 @@ node_modules/
 public/
 .deploy*/
 build/
+dist/
 components/
 .idea/
