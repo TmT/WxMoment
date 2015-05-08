@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+    <meta charset="UTF-8">
+    <title>腾讯视频</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content=" initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no">
+    <script src="../build.js"></script>
+</head>
+<body>
+<div id="WxMomentVideo" style="width: 320px; height: 320px;"></div>
+<script>
+
+    var video = new WxMoment.Video({
+        vid: "a0016gys8ct",
+        onplay: function () {
+            //开始加载视频资源
+        },
+        onplaying: function () {
+            //开始播放视频时
+        },
+        onpause: function () {
+            //当暂停播放
+        },
+        onallended: function () {
+            //播放到最后完毕
+        },
+        onfullscreen: function (a) {
+            //全屏时
+        }
+    });
+
+    //可以通过这个暂停视频
+    //video.getPlayer().parse();
+
+</script>
+</body>
+</html>
