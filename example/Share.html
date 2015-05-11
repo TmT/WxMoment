@@ -15,9 +15,11 @@
     function successFunc() {
         alert("shared");
     }
+
     function cancelFunc() {
         alert("canceled");
     }
+
     function anotherFunc() {
         alert("another");
     }
@@ -39,9 +41,13 @@
             'cancel': cancelFunc
         }
     });
+
+    //可以在稍后重新设置
+    //这时候设置 global 不再有效,需要单独设置 moment 和 friend
     share.set(['moment', 'title', "没有买卖就没有伤害"]);
+    share.set(['moment', 'link', "http://url.cn/"]);
     share.set(['callback', 'success', anotherFunc]);
-    share.set(['moment', 'link', {'random': "1", 'type': "2"}]);
+
 
 </script>
 </body>
