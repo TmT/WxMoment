@@ -1,52 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head lang="zh-cn">
-    <meta charset="UTF-8">
-    <title>微信分享</title>
+	<meta charset="UTF-8">
+
+	<!-- 在 meta 标签中进行基础分享信息设置-->
+	<meta name="wxm:timeline_title" content="meta分享到朋友圈的标题">
+	<meta name="wxm:appmessage_title" content="meta分享给好友消息的标题">
+	<meta name="wxm:appmessage_desc" content="meta分享给好友信息的详情">
+	<!-- 分享缩略图，绝对路径-->
+	<meta name="wxm:img_url" content="http://wximg.gtimg.com/tmt/_demo/wxmoment/img/thumb.jpg">
+	<!-- 分享链接-->
+	<meta name="wxm:link" content="http://wximg.gtimg.com/tmt/_demo/wxmoment/share.html">
+	<!-- 在 meta 标签中进行基础分享信息设置 End-->
+
+	<title>微信分享</title>
 </head>
 <body>
-<script src="../build.js"></script>
+<script src="./build/build.js"></script>
 <script>
 
-    var basePath = "http://wximg.gtimg.com/tmt/_demo/wxmoment/";
+	// 初始化
 
-    //=========微信分享=========
+	var share = new WxMoment.Share({});
 
-    function successFunc() {
-        alert("shared");
-    }
 
-    function cancelFunc() {
-        alert("canceled");
-    }
+	//=========微信分享 高级设置=========
 
-    function anotherFunc() {
-        alert("another");
-    }
+	function successFunc() {
+		alert("noshared");
+	}
 
-    var share = new WxMoment.Share({
-        'moment': {
-            'title': "朋友圈分享链接内容"
-        },
-        'friend': {
-            'title': "昨天下了一场雨",
-            'desc': "雨水沾湿了小茉莉"
-        },
-        'global': {
-            'img_url': basePath + "img/thumb.jpg",
-            'link': window.location.href.split("?")[0].replace(/([&|\?]{1})ticket=[\w\-]+(&?)/, '$1').replace(/\?$/, '')
-        },
-        'callback': {
-            'success': successFunc,
-            'cancel': cancelFunc
-        }
-    });
+	function cancelFunc() {
+		alert("nocanceled");
+	}
 
-    //可以在稍后重新设置
-    //这时候设置 global 不再有效,需要单独设置 moment 和 friend
-    share.set(['moment', 'title', "没有买卖就没有伤害"]);
-    share.set(['moment', 'link', "http://url.cn/"]);
-    share.set(['callback', 'success', anotherFunc]);
+	function anotherFunc() {
+		alert("noanother");
+	}
+
+	// 脚本方式设置分享内容
+
+
+	/*
+	var share = new WxMoment.Share({
+		'timeline': {
+			'title': "no-meta-tlt",
+			'desc': "no-meta-tlt"
+		},
+		'appmessage': {
+			'title': "no-meta-amt",
+			'desc': "no-meta-amd"
+		},
+		'global': {
+			'img_url': "http://wximg.gtimg.com/tmt/_demo/wxmoment/img/thumb.jpg",
+			'link': window.location.href.split("?")[0].replace(/([&|\?]{1})ticket=[\w\-]+(&?)/, '$1').replace(/\?$/, '')
+		},
+		'callback': {
+			'timeline': {
+				'success': successFunc,
+				'cancel': cancelFunc
+			},
+			'appmessage': {
+				'success': successFunc,
+				'cancel': cancelFunc
+			}
+		}
+	});
+
+	*/
+
+
+	// 重新设置分享相关内容，包括高级接口
+
+	share.set(['appmessage', 'link', "http://www.baidu.com/"]);
+	share.set(['callback', 'timeline','success', anotherFunc]);
 
 
 </script>
