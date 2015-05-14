@@ -10,11 +10,16 @@
     <script src="http://cdnjs.gtimg.com/cdnjs/libs/wxmoment/0.0.1/wxmoment.min.js"></script>
 </head>
 <body>
-<div id="WxMomentVideo" style="width: 320px; height: 320px;">12122</div>
+<div id="WxMomentVideo" style="width: 320px; height: 320px;"></div>
 <script>
 
+    // basePath 继承全局设置
+    // var basePath = "http://wximg.gtimg.com/tmt/_demo/wxmoment/";
+
     var video = new WxMoment.Video({
+        // 请联系接口人确认视频清晰度已调至高清版本
         vid: "a0016gys8ct", //视频地址：http://v.qq.com/page/a/t/t/a0016gys8ct.html
+        pic: basePath + "img/video-img.jpg", //视频默认缩略图
         oninited: function () {
             //播放器在视频载入完毕触发
         },
