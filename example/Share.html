@@ -1,80 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head lang="zh-cn">
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-	<!-- 在 meta 标签中进行基础分享信息设置-->
-	<meta name="wxm:timeline_title" content="meta分享到朋友圈的标题">
-	<meta name="wxm:appmessage_title" content="meta分享给好友消息的标题">
-	<meta name="wxm:appmessage_desc" content="meta分享给好友信息的详情">
-	<!-- 分享缩略图，绝对路径-->
-	<meta name="wxm:img_url" content="http://wximg.gtimg.com/tmt/_demo/wxmoment/img/thumb.jpg">
-	<!-- 分享链接-->
-	<meta name="wxm:link" content="http://wximg.gtimg.com/tmt/_demo/wxmoment/share.html">
-	<!-- 在 meta 标签中进行基础分享信息设置 End-->
+    <!-- 在 meta 标签中进行基础分享信息设置-->
+    <meta name="wxm:timeline_title" content="meta分享到朋友圈的标题">
+    <meta name="wxm:appmessage_title" content="meta分享给好友消息的标题">
+    <meta name="wxm:appmessage_desc" content="meta分享给好友信息的详情">
+    <!-- 分享缩略图，绝对路径-->
+    <meta name="wxm:img_url" content="http://wximg.gtimg.com/tmt/_demo/wxmoment/img/thumb.jpg">
+    <!-- 分享链接-->
+    <meta name="wxm:link" content="http://wximg.gtimg.com/tmt/_demo/wxmoment/share.html">
+    <!-- 在 meta 标签中进行基础分享信息设置 End-->
 
-	<title>微信分享</title>
+    <title>微信分享</title>
 </head>
 <body>
-<script src="./build/build.js"></script>
+<script src="/build.js"></script>
 <script>
 
-	// 初始化
+    // 初始化
 
-	var share = new WxMoment.Share({});
-
-
-	//=========微信分享 高级设置=========
-
-	function successFunc() {
-		alert("noshared");
-	}
-
-	function cancelFunc() {
-		alert("nocanceled");
-	}
-
-	function anotherFunc() {
-		alert("noanother");
-	}
-
-	// 脚本方式设置分享内容
+    var share = new WxMoment.Share({});
 
 
-	/*
-	var share = new WxMoment.Share({
-		'timeline': {
-			'title': "no-meta-tlt",
-			'desc': "no-meta-tlt"
-		},
-		'appmessage': {
-			'title': "no-meta-amt",
-			'desc': "no-meta-amd"
-		},
-		'global': {
-			'img_url': "http://wximg.gtimg.com/tmt/_demo/wxmoment/img/thumb.jpg",
-			'link': window.location.href.split("?")[0].replace(/([&|\?]{1})ticket=[\w\-]+(&?)/, '$1').replace(/\?$/, '')
-		},
-		'callback': {
-			'timeline': {
-				'success': successFunc,
-				'cancel': cancelFunc
-			},
-			'appmessage': {
-				'success': successFunc,
-				'cancel': cancelFunc
-			}
-		}
-	});
+    //=========微信分享 高级设置=========
 
-	*/
+    // 脚本方式设置分享内容
+    // 重新设置分享相关内容，包括高级接口
 
+    //重新设置发送给好友的链接
+    share.set('appmessage', 'link', "http://www.baidu.com/");
 
-	// 重新设置分享相关内容，包括高级接口
+    share.set('timeline', 'success', function () {
+        console.log("朋友圈分享成功")
+    });
 
-	share.set(['appmessage', 'link', "http://www.baidu.com/"]);
-	share.set(['callback', 'timeline','success', anotherFunc]);
+    share.set('timeline', 'cancel', function () {
+        console.log("取消分享到朋友圈")
+    });
 
+    share.set('appmessage', 'success', function () {
+        console.log("分享给好友成功")
+    });
+
+    share.set('appmessage', 'cancel', function () {
+        console.log("取消分享给好友")
+    });
+
+    //还有其它的参数分别为
+
+    // timeline title
+    // timeline desc
+    // timeline img_url
+    // timeline link
+    // timeline success
+    // timeline cancel
+
+    // appmessage title
+    // appmessage desc
+    // appmessage img_url
+    // appmessage link
+    // appmessage success
+    // appmessage cancel
 
 </script>
 </body>
