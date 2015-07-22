@@ -85,10 +85,73 @@
     margin-top: 20px;
     font-size: 15px;
     color: #fff
-} </style>
+}
+@media only screen
+    and (min-device-width : 1025px){
+        html{
+            width:414px;
+            margin: 0 auto;
+            background-color: #333!important;
+            position: absolute;
+            left: 50%;
+            margin-left: -207px;
+        }
+        #orientLayer{
+            display: none;
+        }
+        .qr-box{
+            position: absolute;
+            right: -174px;
+            display: block;
+            top: 20px;
+            border-radius: 4px;
+            z-index: 9999;
+            background-color: #fff;
+        }
+        .qr-box__thumb{
+            position: absolute;
+            right: 58px;
+            width: 30px;
+            height: 30px;
+            display: block;
+            top: 59px;
+            z-index: 9999;
+            background-color: #fff;
+            padding: 2px;
+            -webkit-background-size: 30px;
+            background-size: 30px;
+            background-repeat: no-repeat;
+            background-position: 2px 2px;
+            border: none;
+        }
+        .qr-box__text{
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            line-height: 18px;
+            padding-bottom: 10px;
+        }
+        .qr-box__img{
+            width: 150px;
+            height: 150px;
+            border: none;
+            border-radius: 10px 10px 0 0 ;
+        }
+        .qr-box__img img{
+            padding: 5px;
+            width: 140px;
+            height: 140px;
+        }
+    }
+</style>
 <div id="orientLayer" class="mod-orient-layer">
     <div class="mod-orient-layer__content"><i class="icon mod-orient-layer__icon-orient"></i>
 
         <div class="mod-orient-layer__desc">为了更好的体验，请使用竖屏浏览</div>
     </div>
+</div>
+<div class="qr-box">
+    <div id="qr-box__img" class="qr-box__img"></div>
+    <div id="qr-box__thumb" class="qr-box__thumb"></div>
+    <div class="qr-box__text">微信扫一扫<br>手机浏览效果更佳</div>
 </div>
