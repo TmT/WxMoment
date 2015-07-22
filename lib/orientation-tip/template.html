@@ -116,13 +116,15 @@
             display: block;
             top: 59px;
             z-index: 9999;
-            background-color: #fff;
             padding: 2px;
             -webkit-background-size: 30px;
             background-size: 30px;
             background-repeat: no-repeat;
             background-position: 2px 2px;
             border: none;
+        }
+        .qr-box__thumb_default{
+            background-color: #fff;
         }
         .qr-box__text{
             width: 100%;
@@ -146,12 +148,12 @@
 </style>
 <div id="orientLayer" class="mod-orient-layer">
     <div class="mod-orient-layer__content"><i class="icon mod-orient-layer__icon-orient"></i>
-
         <div class="mod-orient-layer__desc">为了更好的体验，请使用竖屏浏览</div>
     </div>
 </div>
 <div class="qr-box">
     <div id="qr-box__img" class="qr-box__img"></div>
+    <div class="qr-box__thumb qr-box__thumb_default" style="background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAIAAAC1nk4lAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAxZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MUJCRjQxMDgyOEEyMTFFNTg3MDBEQzVFNkU1MzBCNEQiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MUJCRjQxMDcyOEEyMTFFNTg3MDBEQzVFNkU1MzBCNEQiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgTWFjaW50b3NoIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9IjU2NkVBQkE0MjZCRkM3MzcyODRCMjg2MjMxMjdGRUFBIiBzdFJlZjpkb2N1bWVudElEPSI1NjZFQUJBNDI2QkZDNzM3Mjg0QjI4NjIzMTI3RkVBQSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pp8Q/KEAAAfqSURBVHja7Jp7UFTXHcfPfS37ZnkjaIII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)"></div>
     <div id="qr-box__thumb" class="qr-box__thumb"></div>
     <div class="qr-box__text">微信扫一扫<br>手机浏览效果更佳</div>
 </div>
