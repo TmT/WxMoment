@@ -66,7 +66,18 @@
     $(document).ready(function(){
 
         var pageSlider = new WxMoment.PageSlider({
-            pages: $('.screen')
+            pages: $('.screen'),
+            direction: 'vertical',          //可选，vertical 或 v 为上下滑动，horizontal 或 h 为左右滑动，默认为 vertical
+            currentClass: 'current',        //可选, 当前屏的class (方便实现内容的进场动画)，默认值为 'current'
+            rememberLastVisited: true,      //可选，记住上一次访问结束后的索引值，可用于实现页面返回后是否回到上次访问的页面
+            animationPlayOnce: false,       //可选，切换页面时，动画只执行一次
+            oninit: function () {},         //可选，初始化完成时的回调
+            onbeforechange: function () {}, //可选，开始切换前的回调
+            onchange: function () {},       //可选，每一屏切换完成时的回调
+            onSwipeUp: function () {},      //可选，swipeUp 回调
+            onSwipeDown: function () {},    //可选，swipeDown 回调
+            onSwipeLeft: function () {},    //可选，swipeLeft 回调
+            onSwipeRight: function () {}    //可选，swipeRight 回调
         });
     })
 </script>
