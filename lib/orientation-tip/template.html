@@ -95,6 +95,7 @@
             position: absolute;
             left: 50%;
             margin-left: -207px;
+            max-height: 672px;
         }
         #orientLayer{
             display: none;
@@ -110,15 +111,15 @@
         }
         .qr-box__thumb{
             position: absolute;
-            right: 58px;
-            width: 30px;
-            height: 30px;
+            right: 59px;
+            width: 25px;
+            height: 25px;
             display: block;
             top: 59px;
             z-index: 9999;
             padding: 2px;
-            -webkit-background-size: 30px;
-            background-size: 30px;
+            -webkit-background-size: 25px;
+            background-size: 25px;
             background-repeat: no-repeat;
             background-position: 2px 2px;
             border: none;
@@ -136,15 +137,21 @@
         .qr-box__img{
             width: 150px;
             height: 150px;
-            background-size: 150px;
-            -webkit-background-size: 150px;
             border: none;
             border-radius: 10px 10px 0 0 ;
+            background-size: 140px;
+            -webkit-background-size: 140px;
+            background-repeat: no-repeat;
+            background-position: 5px;
         }
         .qr-box__img img{
             padding: 5px;
             width: 140px;
             height: 140px;
+        }
+        .screen__inner{
+            -webkit-transform: scale(1.29375)!important;
+            transform: scale(1.29375)!important;
         }
     }
 </style>
