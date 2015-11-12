@@ -1,5 +1,7 @@
 # WxMoment
 
+此项目不再更新，请到 https://github.com/wxc-team/WxMoment 查看最新的功能特性，以及问题反馈。
+
 ### 开发指南
 
 
